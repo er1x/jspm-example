@@ -1,8 +1,7 @@
-import Memes from 'js/memes';
+import Images from 'js/images';
 
-function renderMemes (memes) {
-  console.log(memes);
-  let urls = memes
+function renderImages (images) {
+  let urls = images
             .filter(obj => obj.data.post_hint === 'image')
             .filter(obj => !obj.data.over_18)
             .map(obj => obj.data.url);
@@ -13,6 +12,6 @@ function renderMemes (memes) {
   });
 }
 
-let memes = new Memes();
-memes.list()
-     .then(renderMemes);
+let images = new Images();
+images.list()
+     .then(renderImages);
